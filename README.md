@@ -12,7 +12,7 @@ A full-stack web application for managing prescriptions, built with **MERN stack
   
 ---
 ## 📌 Important Links
-![ER Diagram](https://github.com/uleventkilic/prescription-app/raw/main/ER_Diagram.png)
+![ER Diagram](https://github.com/uleventkilic/prescription-app/blob/main/ER_Diagram.png)
 - **Youtube Video:** [Youtube](https://www.youtube.com/watch?v=ocroGZAr5_4)
 - **Render:** [Render Live App](https://prescription-frontend.onrender.com)
   
