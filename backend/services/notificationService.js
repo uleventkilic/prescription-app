@@ -2,27 +2,17 @@ const connectRabbitMQ = require('../config/rabbitMQ');
 const sendEmail = require('../utils/email');
 const { Prescription } = require('../models');
 
+const connectRabbitMQ = require("../config/rabbitmq");
+
 const processNotifications = async () => {
-    const connection = await connectRabbitMQ();
-    const channel = await connection.createChannel();
-    const queue = 'incomplete_prescriptions';
-
-    await channel.assertQueue(queue, { durable: true });
-
-    console.log(`Waiting for messages in queue: ${queue}`);
-
-    channel.consume(queue, async (msg) => {
-        if (msg !== null) {
-            const { pharmacyEmail, prescriptions } = JSON.parse(msg.content.toString());
-
-            const subject = 'Daily Incomplete Prescription Report';
-            const text = `You have ${prescriptions.length} incomplete prescriptions:\n\n${prescriptions.map((p) => `ID: ${p.id}, Missing: ${p.missing}`).join('\n')}`;
-            await sendEmail(pharmacyEmail, subject, text);
-
-            channel.ack(msg);
-            console.log(`Processed notification for ${pharmacyEmail}`);
-        }
-    });
+    try {
+        const { connection, channel } = await connectRabbitMQ();
+        console.log("🔔 Notification service connected to RabbitMQ.");
+        // Burada mesaj kuyruğunu işleyecek kodlarını yaz
+    } catch (error) {
+        console.error("❌ Notification Service Error:", error);
+    }
 };
 
 module.exports = processNotifications;
+
