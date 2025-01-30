@@ -12,8 +12,8 @@ A full-stack web application for managing prescriptions, built with **MERN stack
   
 ---
 ## 📌 Important Links
-- **Backend API:** [Prescription Backend](https://prescription-backend.onrender.com)
-- **Frontend Application:** [Prescription Frontend](https://prescription-frontend.onrender.com)
+- *Youtube Video:** [Youtube]([https://prescription-backend.onrender.com](https://www.youtube.com/watch?v=ocroGZAr5_4))
+- **Render:** [Render Live App](https://prescription-frontend.onrender.com)
   
 ---
 
