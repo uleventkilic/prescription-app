@@ -3,10 +3,8 @@
   "version": "1.0.0",
   "private": true,
   "scripts": {
-  "start": "node server.js",
-  "build": "cd frontend && npm install && npm run build"
-}
-
+    "start": "cd backend && npm install && node server.js",
+    "build": "cd frontend && npm install && npm run build"
   },
   "dependencies": {
     "concurrently": "^7.0.0"
