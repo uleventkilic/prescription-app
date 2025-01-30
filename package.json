@@ -1,0 +1,14 @@
+{
+  "name": "prescription-app",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "concurrently \"npm start --prefix backend\" \"npm start --prefix frontend\" \"npm start --prefix backend/gateway\""
+  },
+  "dependencies": {
+    "concurrently": "^7.0.0"
+  },
+  "devDependencies": {
+    "@babel/plugin-proposal-private-property-in-object": "^7.21.11"
+  }
+}

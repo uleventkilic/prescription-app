@@ -1,0 +1,50 @@
+.pharmacy-page {
+    font-family: Arial, sans-serif;
+    padding: 20px;
+}
+
+.pharmacy-title {
+    text-align: center;
+    color: #2c3e50;
+    margin-bottom: 20px;
+}
+
+.patient-selection {
+    margin-bottom: 20px;
+}
+
+.patient-selection label {
+    margin-right: 10px;
+    font-weight: bold;
+}
+
+.patient-details {
+    margin-bottom: 20px;
+    background: #f9f9f9;
+    padding: 15px;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.prescriptions-section {
+    margin-top: 20px;
+}
+
+.prescriptions-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+}
+
+.prescriptions-table th,
+.prescriptions-table td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+}
+
+.prescriptions-table th {
+    background-color: #f2f2f2;
+    color: #333;
+    font-weight: bold;
+}
