@@ -3,7 +3,10 @@
   "version": "1.0.0",
   "private": true,
   "scripts": {
-    "dev": "concurrently \"npm start --prefix backend\" \"npm start --prefix frontend\" \"npm start --prefix backend/gateway\""
+  "start": "node server.js",
+  "build": "cd frontend && npm install && npm run build"
+}
+
   },
   "dependencies": {
     "concurrently": "^7.0.0"
