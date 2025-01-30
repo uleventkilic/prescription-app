@@ -1,0 +1,217 @@
+# 📌 Prescription App - Prescription Management System
+
+A full-stack web application for managing prescriptions, built with **MERN stack (MongoDB, Express.js, React.js, Node.js)** and designed using a **microservices architecture**.
+
+---
+
+## 🌐 Local Development URLs
+- **Frontend:** http://localhost:3001
+- **Backend Services:**
+  - **Gateway:** http://localhost:5001
+  - **API Documentation:** http://localhost:5000
+  
+---
+## 📌 Important Links
+- **Backend API:** [Prescription Backend](https://prescription-backend.onrender.com)
+- **Frontend Application:** [Prescription Frontend](https://prescription-frontend.onrender.com)
+  
+---
+
+## 🏗 Architecture & Design
+### **Microservices Architecture**
+The application follows a microservices-based architecture with independent services:
+
+- **Gateway Service:** API Gateway for routing and load balancing
+- **Doctor Service:** Manages doctor profiles and prescription creation
+- **Auth Service:** Handles authentication and authorization (JWT-based)
+- **Prescription Service:** Manages prescriptions
+- **Pharmacy Service:** Handles prescription processing
+- **Notification Service:** Sends real-time notifications via RabbitMQ
+- **Admin Service:** Provides administrative controls
+
+### **Tech Stack**
+#### **Frontend:**
+- React.js
+- Material-UI
+- Redux Toolkit
+- Axios for API communication
+
+#### **Backend:**
+- Node.js
+- Express.js
+- MongoDB
+- Redis (Caching layer)
+- RabbitMQ (Message Queue)
+
+#### **DevOps & Deployment:**
+- Docker
+- Docker Compose
+- Render (Cloud Deployment)
+
+---
+
+## 📂 Data Models
+### **User**
+```json
+{
+  "_id": "string",
+  "name": "string",
+  "email": "string",
+  "password": "string",
+  "role": "string",
+  "picture": "string"
+}
+```
+### **Doctor**
+```json
+{
+  "_id": "string",
+  "userId": "string",
+  "fullName": "string",
+  "specialization": "string",
+  "status": "string"
+}
+```
+### **Prescription**
+```json
+{
+  "_id": "string",
+  "doctorId": "string",
+  "patientId": "string",
+  "medications": "array",
+  "status": "string"
+}
+```
+### **Pharmacy**
+```json
+{
+  "_id": "string",
+  "name": "string",
+  "location": "object",
+  "status": "string"
+}
+```
+
+---
+
+## ✨ Features
+### **User Management**
+- JWT Authentication
+- Role-based access control (Doctor, Patient, Pharmacist, Admin)
+- Profile management
+
+### **Prescription Management**
+- Doctors can create digital prescriptions
+- Patients can access their prescription history
+- Pharmacies can validate and process prescriptions
+
+### **Notification System**
+- Real-time updates via RabbitMQ
+- Email notifications for prescription updates
+
+### **Security & Authentication**
+- Secure authentication using JWT
+- Role-based authorization
+- Redis caching for faster authentication
+
+---
+
+## 🔍 Design Decisions & Assumptions
+### **Authentication**
+- JWT-based authentication with token refresh mechanism
+- Role-based access control for different users
+
+### **Prescription Management**
+- Only doctors can issue prescriptions
+- Patients can only view their own prescriptions
+- Pharmacies can only access prescriptions assigned to them
+
+### **Notification System**
+- RabbitMQ-based event-driven architecture
+- Email and in-app notifications for users
+
+---
+
+## 🚀 Challenges & Solutions
+### **Microservices Communication**
+- **Challenge:** Managing inter-service communication
+- **Solution:** Implemented RabbitMQ and API Gateway
+
+### **Security Concerns**
+- **Challenge:** Ensuring secure prescription access
+- **Solution:** Implemented role-based access and JWT authentication
+
+### **Performance Optimization**
+- **Challenge:** Speeding up frequent queries
+- **Solution:** Implemented Redis for caching
+
+---
+
+## 🚀 Future Improvements
+### **Technical Enhancements**
+- Implement distributed tracing
+- Introduce service discovery
+- Add advanced monitoring & logging
+
+### **Feature Additions**
+- AI-powered prescription suggestions
+- Telemedicine video consultations
+- Payment gateway for premium features
+- Mobile application support
+
+---
+
+## 🛠 Setup Instructions
+### **Prerequisites**
+- Node.js (v16 or higher)
+- MongoDB
+- Redis
+- RabbitMQ
+- Docker (optional)
+
+### **Installation Steps**
+1️⃣ Clone the repository:
+```bash
+git clone https://github.com/yourusername/PrescriptionApp.git
+cd PrescriptionApp
+```
+
+2️⃣ Install dependencies for frontend & backend:
+```bash
+cd frontend && npm install
+cd ../backend && npm install
+```
+
+3️⃣ Start the services:
+#### **Using Docker**
+```bash
+docker-compose up
+```
+
+#### **Without Docker**
+```bash
+cd backend
+npm run dev:gateway      # Port 8080
+npm run dev:doctors      # Port 4001
+npm run dev:auth         # Port 4002
+npm run dev:prescriptions # Port 4003
+npm run dev:pharmacies   # Port 4004
+npm run dev:notifications # Port 4005
+npm run dev:admin        # Port 4006
+```
+
+4️⃣ Start the frontend:
+```bash
+cd frontend
+npm start # Runs on Port 3000
+```
+
+---
+
+## 🌍 Accessing the Application
+- **Frontend:** http://localhost:3000
+- **API Gateway:** http://localhost:5001
+- **API:** http://localhost:5000
+
+
+---
